@@ -1,5 +1,8 @@
 FROM node:carbon
 
+ENV HUGO_VERSION=0.37.1
+ENV HUGO_DOWNLOAD_URL=https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
+
 USER node
 RUN mkdir /home/node/.npm-global
 ENV PATH=/home/node/.npm-global/bin:$PATH
@@ -8,9 +11,6 @@ ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 RUN npm install -g firebase-tools
 
 USER root
-
-ENV HUGO_VERSION=0.37.1
-ENV HUGO_DOWNLOAD_URL=https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
 
 RUN apt-get update
 RUN apt-get install -y \
