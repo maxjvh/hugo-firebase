@@ -20,7 +20,7 @@ RUN apt-get install -y \
 RUN wget "$HUGO_DOWNLOAD_URL" && \
     tar xzf hugo_${HUGO_VERSION}_Linux-64bit.tar.gz && \
 	mv hugo /usr/bin/hugo && \
-    rm hugo_${HUGO_VERSION}_Linux-64bit.tar.gz LICENSE.md README.md
+    rm hugo_${HUGO_VERSION}_Linux-64bit.tar.gz LICENSE README.md
 
 
 EXPOSE 1313
